@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-import App from './components/app';
-import reducers from './reducers';
+var App = React.createClass({
+  render() {
+    return (
+      <div>hi!</div>
+    )
+  }
+});
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+ReactDOM.render(<App/>, document.getElementById('container'));
